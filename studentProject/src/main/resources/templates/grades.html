@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Grades</title>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0'); /* Replace with your pleasant background image URL */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the background image */
+            font-family: Arial, sans-serif; /* Font style */
+            color: #333; /* Text color */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+            padding: 20px; /* Padding around the content */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            width: 80%; /* Width of the container */
+            max-width: 600px; /* Maximum width */
+        }
+
+        table {
+            width: 100%; /* Full width of the container */
+            border-collapse: collapse; /* Collapse borders */
+            margin-top: 20px; /* Space above the table */
+        }
+
+        th, td {
+            padding: 10px; /* Padding for table cells */
+            text-align: left; /* Align text to the left */
+            border-bottom: 1px solid #ddd; /* Bottom border for rows */
+        }
+
+        th {
+            background-color: #4CAF50; /* Header background color */
+            color: white; /* Header text color */
+        }
+
+        tr:hover {
+            background-color: rgba(76, 175, 80, 0.1); /* Highlight row on hover */
+        }
+
+        a {
+            display: inline-block; /* Make link a block element */
+            margin-top: 20px; /* Space above the link */
+            color: #4CAF50; /* Link color */
+            text-decoration: none; /* Remove underline */
+            font-size: 18px; /* Font size */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grades</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data Structures</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>Algorithms</td>
+                    <td>A-</td>
+                </tr>
+                <tr>
+                    <td>Database Management</td>
+                    <td>B+</td>
+                </tr>
+                <tr>
+                    <td>Operating Systems</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>Web Development</td>
+                    <td>A+</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><a th:href="@{/dashboard}">Back to Dashboard</a></p>
+    </div>
+</body>
+</html>

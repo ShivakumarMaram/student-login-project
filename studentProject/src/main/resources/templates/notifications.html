@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Notifications</title>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0'); /* Background image */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the background image */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .notifications-container {
+            background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 350px;
+        }
+
+        .notification {
+            background-color: #e9f7ef;
+            border-left: 5px solid #28a745;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .notification p {
+            margin: 0;
+            color: #333;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="notifications-container">
+        <h1>Notifications</h1>
+        <p>Your notifications will appear here.</p>
+
+        <div class="notification">
+            <p><strong>New Assignment:</strong> You have a new assignment due next week.</p>
+        </div>
+        <div class="notification">
+            <p><strong>Grade Update:</strong> Your grade for the last exam has been posted.</p>
+        </div>
+        <div class="notification">
+            <p><strong>Event Reminder:</strong> Don't forget about the upcoming workshop on Friday.</p>
+        </div>
+
+        <p><a th:href="@{/dashboard}">Back to Dashboard</a></p>
+    </div>
+</body>
+</html>

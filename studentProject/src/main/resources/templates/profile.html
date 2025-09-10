@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile</title>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0'); /* Background image */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the background image */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .profile-container {
+            background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .profile-container p {
+            color: #555;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .profile-container strong {
+            color: #333;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Student Profile</h1>
+
+        <p><strong>Name:</strong> <span th:text="${student.name}">Name</span></p>
+        <p><strong>Username:</strong> <span th:text="${student.username}">Username</span></p>
+        <p><strong>Email:</strong> <span th:text="${student.email}">Email</span></p>
+
+        <p><a th:href="@{/dashboard}">Back to Dashboard</a></p>
+    </div>
+</body>
+</html>

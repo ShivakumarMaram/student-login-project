@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Login</title>
+    <meta charset="UTF-8" />
+    <style>
+        /* Basic page setup */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Image styling */
+        .top-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        /* Form container styling */
+        .container {
+            background: white;
+            width: 320px;
+            padding: 30px 25px 25px 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.12);
+            box-sizing: border-box;
+        }
+
+        /* Form title */
+        h1 {
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #333;
+            font-weight: 700;
+            font-size: 26px;
+        }
+
+        /* Label styling */
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* Input styling */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1.8px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        /* Focus style for inputs */
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #5cb85c;
+            outline: none;
+            box-shadow: 0 0 8px #a3d7a3;
+        }
+
+        /* Submit button */
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 7px;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(92,184,92,0.4);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+            box-shadow: 0 6px 14px rgba(76,174,76,0.6);
+        }
+
+        /* Link and error message */
+        p {
+            margin-top: 18px;
+            font-size: 14px;
+            text-align: center;
+            color: #777;
+        }
+
+        a {
+            color: #5cb85c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: #d9534f;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        /* Responsive: reduce container width on small screens */
+        @media (max-width: 360px) {
+            .container {
+                width: 90vw;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img class="top-image" src="https://images.pexels.com/photos/3184611/pexels-photo-3184611.jpeg?auto=compress&cs=tinysrgb&h=150&w=150" alt="Man reading book" />
+
+    <div class="container">
+        <h1>Student Login</h1>
+
+        <form th:action="@{/login}" method="post">
+            <div>
+                <label>Username:</label>
+                <input type="text" name="username" required />
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password" required />
+            </div>
+
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+
+        <p th:if="${error}" class="error" th:text="${error}"></p>
+
+        <p>Don't have an account? <a th:href="@{/signup}">Signup here</a></p>
+    </div>
+</body>
+</html>

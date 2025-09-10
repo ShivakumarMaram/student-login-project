@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Dashboard</title>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0'); /* Replace with your pleasant background image URL */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the background image */
+            font-family: Arial, sans-serif; /* Font style */
+            color: white; /* Text color */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+        }
+
+        h1 {
+            margin-bottom: 30px; /* Space below the heading */
+            font-size: 36px; /* Font size for the heading */
+            text-align: center; /* Center the heading text */
+        }
+
+        .button-container {
+            display: flex; /* Use flexbox for button layout */
+            justify-content: center; /* Center buttons horizontally */
+            flex-wrap: wrap; /* Allow buttons to wrap if necessary */
+            margin-bottom: 20px; /* Space below the button container */
+        }
+
+        .btn {
+            margin: 10px; /* Space between buttons */
+            padding: 15px 25px; /* Button padding */
+            background-color: rgba(76, 175, 80, 0.9); /* Button color with transparency */
+            color: white; /* Text color */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 18px; /* Font size */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+        }
+
+        .btn:hover {
+            background-color: rgba(69, 160, 73, 1); /* Darker button color on hover */
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+
+        .logout {
+            margin-top: 20px; /* Space above the logout link */
+            display: block; /* Make logout link a block element */
+            padding: 15px 30px; /* Button padding */
+            background: linear-gradient(45deg, #ff6b6b, #f7b733); /* Colorful gradient background */
+            color: white; /* Text color */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 18px; /* Font size */
+            transition: background 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+        }
+
+        .logout:hover {
+            background: linear-gradient(45deg, #f7b733, #ff6b6b); /* Reverse gradient on hover */
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Student Dashboard</h1>
+
+    <div class="button-container">
+        <a th:href="@{/studentPages/profile}" class="btn">Profile</a>
+        <a th:href="@{/studentPages/courses}" class="btn">Courses</a>
+        <a th:href="@{/studentPages/grades}" class="btn">Grades</a>
+        <a th:href="@{/studentPages/notifications}" class="btn">Notifications</a>
+    </div>
+
+    <a th:href="@{/logout}" class="logout">Logout</a>
+</body>
+</html>

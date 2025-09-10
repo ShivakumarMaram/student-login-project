@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Courses</title>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0'); /* Background image */
+            background-size: cover; /* Cover the entire page */
+            background-position: center; /* Center the background image */
+            color: #333; /* Default text color */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Padding around the body */
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+            justify-content: center; /* Center items vertically */
+            height: 100vh; /* Full viewport height */
+        }
+
+        h1 {
+            color: #007BFF; /* Blue color for the heading */
+            margin-bottom: 20px; /* Space below the heading */
+        }
+
+        p {
+            color: #007BFF; /* Blue color for the paragraph */
+            font-size: 18px; /* Font size for the paragraph */
+        }
+
+        main {
+            display: flex; /* Use flexbox for card layout */
+            flex-wrap: wrap; /* Allow cards to wrap */
+            justify-content: center; /* Center cards horizontally */
+            max-width: 800px; /* Maximum width for the main container */
+            width: 100%; /* Full width */
+            padding: 20px; /* Padding around the main container */
+        }
+
+        .subject-card {
+            background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            margin: 10px; /* Space between cards */
+            padding: 15px; /* Padding inside cards */
+            width: 150px; /* Fixed width for cards */
+            text-align: center; /* Center text inside cards */
+            transition: transform 0.3s; /* Smooth transition for hover effects */
+        }
+
+        .subject-card:hover {
+            transform: scale(1.05); /* Slightly enlarge card on hover */
+        }
+
+        .subject-icon {
+            font-size: 40px; /* Icon size */
+            margin-bottom: 10px; /* Space below the icon */
+        }
+
+        .subject-title {
+            font-size: 18px; /* Title font size */
+            margin: 5px 0; /* Space above and below the title */
+            color: black; /* Black color for the title */
+        }
+
+        .subject-description {
+            font-size: 12px; /* Description font size */
+            color: black; /* Black color for the description */
+            margin-top: 5px; /* Space above the description */
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px; /* Space above the link */
+            padding: 10px 15px; /* Link padding */
+            background-color: #007BFF; /* Link color */
+            color: white; /* Text color */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transition for hover effects */
+        }
+
+        a:hover {
+            background-color: #0056b3; /* Darker link color on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Courses</h1>
+    <p>Your enrolled courses will appear here.</p>
+    
+    <main>
+        <article class="subject-card" tabindex="0">
+            <div class="subject-icon" aria-hidden="true">🌐</div>
+            <h2 class="subject-title">Networking</h2>
+            <p class="subject-description">Learn about data communication and network protocols.</p>
+        </article>
+        
+        <article class="subject-card" tabindex="0">
+            <div class="subject-icon" aria-hidden="true">⚙</div>
+            <h2 class="subject-title">Software Engineering</h2>
+            <p class="subject-description">Explore the software development life cycle.</p>
+        </article>
+        
+        <article class="subject-card" tabindex="0">
+            <div class="subject-icon" aria-hidden="true">📊</div>
+            <h2 class="subject-title">Java programming languges</h2>
+            <p class="subject-description">It is platform independent language and it is robust </p>
+        </article>
+		<article class="subject-card" tabindex="0">
+		            <div class="subject-icon" aria-hidden="true">📊</div>
+		            <h2 class="subject-title">Python programming languges</h2>
+		            <p class="subject-description">The Language of Choice for Data Science and Web Development. </p>
+		        </article>
+    </main>
+    
+    <div>
+        <p><a th:href="@{/dashboard}">Back to Dashboard</a></p>
+    </div>
+</body>
+</html>
